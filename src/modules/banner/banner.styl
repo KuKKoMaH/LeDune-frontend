@@ -1,0 +1,35 @@
+.wrapper
+  background: url(banner.jpg) 50% 50% no-repeat
+  cf()
+
+.content
+  float: right
+  background: $white
+  margin: 5.5em 0
+  padding: 22px 19px
+  max-width: 500px
+
+  @media (max-width: $breakpoint-sm - 1)
+    padding: 11px 9px
+    margin: 3em $gutter-half
+
+.inner
+  padding: 60px 60px 30px 40px
+  border: 1px solid $gold
+
+  @media (max-width: $breakpoint-sm - 1)
+    padding: 30px 15px
+
+.text
+  font-size: 1.5em
+  line-height: 36px
+  ffA()
+
+  span
+    color: $gold
+    font-size: 2em
+
+.more
+  color: $gold
+  display: inline-block
+  margin-top: .5em

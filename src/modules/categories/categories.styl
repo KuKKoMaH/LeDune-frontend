@@ -1,0 +1,64 @@
+.wrapper
+  ffA()
+  padding: 2em 0
+
+.items
+  text-align: justify
+  font-size: 0
+  line-height: 0
+  padding: 0 $gutter-half
+
+  @media (max-width: $breakpoint-sm - 1)
+    text-align: left
+
+  &:after
+    content: ''
+    display: inline-block
+    width: 100%
+
+    @media (max-width: $breakpoint-sm - 1)
+      display: none
+
+.link
+  display: inline-block
+  padding-bottom: 8px
+  border-bottom: 1px solid $gold
+  text-decoration: none
+  anim()
+
+  &:hover
+    border-bottom: 1px solid transparent
+
+.item
+  display: inline-block
+  vertical-align: middle
+  font-size: $font-size
+  line-height: normal
+  text-decoration: none
+  text-align: left
+
+  @media (max-width: $breakpoint-sm - 1)
+    display: block
+    margin: 1em auto
+
+.icon,
+.text
+  display: inline-block
+  vertical-align: middle
+
+.text
+  margin-left: .5em
+
+  @media (max-width: $breakpoint-md - 1) and (min-width: $breakpoint-sm)
+    font-size: .7em
+
+.icon-1
+  background: url(sprite-category-1.svg)
+.icon-2
+  background: url(sprite-category-2.svg)
+.icon-3
+  background: url(sprite-category-3.svg)
+.icon-4
+  background: url(sprite-category-4.svg)
+.icon-5
+  background: url(sprite-category-5.svg)

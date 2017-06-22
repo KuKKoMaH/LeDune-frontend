@@ -1,0 +1,43 @@
+.wrapper
+  margin: 3em 0
+.title
+  ffA()
+  color: $blue
+  font-size: 3.375em
+
+.item
+  display: block
+  border-top: 1px solid $gold
+  padding-top: 1.5em
+  position: relative
+  text-decoration: none
+
+  @media (max-width: $breakpoint-sm - 1)
+    margin-bottom: 2em
+
+  img
+    @media (max-width: $breakpoint-sm - 1)
+      display: block
+      margin: 0 auto
+
+.date
+  color: $gold
+  background: $white
+  display: inline-block
+  padding-right: 8px
+  font-size: .9em
+  margin-top: 5px
+
+  &:before
+    content: ''
+    display: block
+    height: 1px
+    width: 100%
+    background: $gold
+    z-index: -1
+    position: absolute
+    transform: translateY(12px)
+
+.text
+  color: $black
+  margin-top: 1em
