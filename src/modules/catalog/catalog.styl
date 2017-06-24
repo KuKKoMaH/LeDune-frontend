@@ -1,0 +1,71 @@
+.title
+  ffA()
+  color: $gold
+  margin: 2em 0 1em
+  letter-spacing: 1px
+  font-size: 3em
+  line-height: 1.2
+
+  @media (max-width: $breakpoint-sm - 1)
+    font-size: 2em
+
+.item
+  border-bottom: 1px solid $gold
+  padding-bottom: 2em
+  margin-bottom: 2em
+
+.image
+  display: block
+  @media (max-width: $breakpoint-sm - 1)
+    margin: 0 auto
+
+.name
+  ffA()
+  color: $blue
+  font-size: 2em
+  line-height: 1.2
+  margin-bottom: .5em
+  display: block
+
+.option
+  font-size: 1.1em
+  margin-bottom: .5em
+  line-height: 33px
+  padding-left: 50px
+  position: relative
+
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 50%
+    transform: translateY(-50%)
+
+.phone:before
+  background: url(sprite-phone.svg)
+.place:before
+  background: url(sprite-place.svg)
+.price:before
+  background: url(sprite-price.svg)
+.space:before
+  background: url(sprite-space.svg)
+
+.more
+  display: inline-block
+  color: $gold
+  margin-top: 1em
+
+.show
+  margin: 2em 0
+  text-align: center
+
+.button
+  &:before
+    content: ''
+    display: inline-block
+    background: url(sprite-show-more.svg)
+    margin-right: 10px
+
+.bullshit
+  p
+    margin: 0 0 2em

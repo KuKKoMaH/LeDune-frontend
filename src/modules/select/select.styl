@@ -1,0 +1,85 @@
+.select
+  display: block
+  width: 100%
+
+:global
+  .selectize-input
+    padding: 16px 40px 16px 20px
+    border-radius 3px
+    background: #F3F3F3
+    font-size: .8em
+    position: relative
+    white-space: nowrap
+
+    @media (max-width: $breakpoint-sm - 1)
+      padding-top: 8px
+      padding-bottom: 8px
+
+    &:after
+      content: ''
+      display: block
+      background: url(sprite-select-arrow.svg)
+      position: absolute
+      right: 24px
+      top: 50%
+      margin-top: -4px
+      opacity: .4
+      anim()
+
+    &.dropdown-active:after
+      transform: rotate(180deg)
+
+    &.disabled
+      background-color: #dfdfdf
+
+    .item
+      vertical-align: top
+      display: inline-block
+      overflow: hidden
+      white-space: nowrap
+      text-overflow: ellipsis
+      max-width: 100%
+
+    input
+      display: none
+      //font-size: 1em
+      //display: inline-block
+      //vertical-align: top
+      //padding: 0
+      //min-height: 0
+      //max-height: none
+      //max-width: 100%
+      //margin: 0 2px 0 0
+      //text-indent: 0
+      //border: 0 none
+      //background: none
+      //line-height: inherit
+      //-webkit-user-select: auto
+      //-webkit-box-shadow: none
+      //box-shadow: none
+
+  .selectize-dropdown
+    position: absolute
+    z-index: 10
+    border: 1px solid #E6E6E6
+    background: #F3F3F3
+    margin: -1px 0 0 0
+    border-top: 0 none
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.1)
+    border-radius: 0 0 3px 3px
+    max-height: 200px
+    overflow-y: scroll
+
+    .option
+      font-size: .8em
+      padding: 3px 20px
+      white-space: nowrap
+      overflow: hidden
+      text-overflow: ellipsis
+      cursor: pointer
+      anim()
+
+      &.active, &:hover
+        background-color: $white
+        color: $black
+

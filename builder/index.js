@@ -44,7 +44,10 @@ function build() {
     .then(buildCss)     // 5. склеить css в 1 файл
     .then(compressImages)
     .then(() => console.timeEnd('Build end'))
-    .catch(err => { throw err; });
+    .catch(err => {
+      console.log(err);
+      throw err;
+    });
 }
 
 /**
@@ -56,7 +59,7 @@ function prepareBuildDir() {
   console.time('prepare structure');
   const dirs = ['buildPath', 'jsPath', 'cssPath', 'imgPath', 'fontPath'];
   dirs.forEach(dir => {
-    if(!fs.existsSync(config[dir])){
+    if (!fs.existsSync(config[dir])) {
       fs.mkdirSync(config[dir]);
     }
   });
@@ -71,8 +74,8 @@ function prepareBuildDir() {
  * @param {Array<String>} modules - список названий модулей
  * @return {Array<String>}
  */
-function collectFiles(type, pages, modules) {
-  const files = [ path.resolve(config.basePath, 'layout', 'layout.' + type) ];
+function collectFiles( type, pages, modules ) {
+  const files = [path.resolve(config.basePath, 'layout', 'layout.' + type)];
   pages.forEach(page => files.push(path.resolve(config.pagesPath, page, page + '.' + type)));
   modules.forEach(page => files.push(path.resolve(config.modulesPath, page, page + '.' + type)));
 
@@ -85,10 +88,10 @@ function collectFiles(type, pages, modules) {
  * @param {Array<String>} pagesName - список имен страниц
  * @return {Array<pageInfo>}
  */
-function prebuildHtml(pagesName) {
+function prebuildHtml( pagesName ) {
   console.log('prebuildHtml');
   return pagesName.map(page =>
-    html.prebuild( path.resolve(config.pagesPath, page, page + '.pug') )
+    html.prebuild(path.resolve(config.pagesPath, page, page + '.pug'))
   );
 }
 
@@ -103,12 +106,12 @@ function prebuildHtml(pagesName) {
  * @return {Promise<brebuildCssResult>}
  *
  */
-function prebuildCss(pagesInfo) {
+function prebuildCss( pagesInfo ) {
   console.log('prebuildCss');
   const modules = _.union.apply(null, pagesInfo.map(page => page.modules));
   const pages = pagesInfo.map(page => page.name);
   const cssFiles = collectFiles('styl', pages, modules);
-  return Promise.all(cssFiles.map(css.convert)).then(modulesCssInfo => ({ pagesInfo, modulesCssInfo}));
+  return Promise.all(cssFiles.map(css.convert)).then(modulesCssInfo => ({ pagesInfo, modulesCssInfo }));
 }
 
 /**
@@ -117,17 +120,23 @@ function prebuildCss(pagesInfo) {
  * @param {brebuildCssResult} brebuildCssResult
  * @return {Promise<brebuildCssResult>}
  */
-function buildJs(brebuildCssResult) {
+function buildJs( brebuildCssResult ) {
   console.log('buildJs');
-  const pages = brebuildCssResult.pagesInfo.reduce((obj, page) => {
-    obj[page.name] = collectFiles('js', [page.name], page.modules);
+  const pages = brebuildCssResult.pagesInfo.reduce(( obj, page ) => {
+    const files = collectFiles('js', [page.name], page.modules);
+    if (files.length) obj[page.name] = files;
     return obj;
   }, {});
-  const styles = brebuildCssResult.modulesCssInfo.reduce((obj, module) => {
+  const styles = brebuildCssResult.modulesCssInfo.reduce(( obj, module ) => {
     obj[module.name] = module.module;
     return obj;
   }, {});
-  return js(pages, { styles }).then(() => brebuildCssResult);
+  return js(pages, { styles }).then(
+    () => brebuildCssResult,
+    err => {
+      throw err
+    }
+  );
 }
 
 /**
@@ -135,9 +144,9 @@ function buildJs(brebuildCssResult) {
  * @param {brebuildCssResult} brebuildCssResult
  * @return {Promise.<*>}
  */
-function buildHtml(brebuildCssResult) {
+function buildHtml( brebuildCssResult ) {
   console.log('buildHtml');
-  const styles = brebuildCssResult.modulesCssInfo.reduce((obj, module) => {
+  const styles = brebuildCssResult.modulesCssInfo.reduce(( obj, module ) => {
     obj[module.name] = module.module;
     return obj;
   }, {});
@@ -154,7 +163,7 @@ function buildHtml(brebuildCssResult) {
  * @param {brebuildCssResult} brebuildCssResult
  * @return {Promise}
  */
-function buildCss(brebuildCssResult) {
+function buildCss( brebuildCssResult ) {
   console.log('buildCss');
   const styles = brebuildCssResult.modulesCssInfo.map(module => module.css);
   return css.combine(styles);
@@ -165,7 +174,7 @@ function buildCss(brebuildCssResult) {
  * @return {Promise}
  */
 function compressImages() {
-  if(process.env.NODE_ENV === 'production') {
+  if (process.env.NODE_ENV === 'production') {
     console.log('compressImages');
     return imageCompressor();
   }
@@ -177,12 +186,14 @@ function watch() {
 
   let inProgress = false;
   const server = livereload.createServer();
-  server.watch(config.buildPath);
-  fs.watch(config.basePath, {recursive: true}, function (eventType, filename) {
-    console.log('change:', filename);
+  // server.watch(config.buildPath);
+  fs.watch(config.basePath, { recursive: true }, function ( eventType, filename ) {
     if (inProgress) return;
     inProgress = true;
-    const buildEnd = () => inProgress = false;
+    const buildEnd = () => {
+      inProgress = false;
+      server.refresh('/');
+    };
     build().then(buildEnd, buildEnd);
   });
   console.log('Start watch');

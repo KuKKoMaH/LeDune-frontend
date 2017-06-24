@@ -1,0 +1,70 @@
+.wrapper
+  cf()
+  margin-bottom: 3em
+
+  h1
+    ffA()
+    color: $gold
+    line-height: 1.1
+    margin: 0 0 1em
+
+  p
+    line-height: 2
+    margin-bottom: 0 0 2em
+
+  img
+    display: block
+    margin: 0 auto
+
+.slider
+  display: block
+  float: left
+  width: 50%
+  margin: 0 2em 4em 0
+
+  @media (max-width: $breakpoint-md - 1)
+    float: none
+    width: 100%
+    margin-right: 0
+
+  :global
+    .slick-dots
+      position: absolute
+      top: 100%
+      margin: 1em 0 0
+      padding: 0
+      left: 0
+      width: 100%
+      text-align: center
+
+      li
+        display: inline-block
+        vertical-align: middle
+        margin: 0 13px
+
+      button
+        display: block
+        position: relative
+        border: 0
+        background: transparent
+        width: 10px
+        height: 10px
+        margin: 0
+        padding: 0
+        text-indent: -9999999px
+        border-radius: 50%
+        anim()
+
+        &:before
+          content: ''
+          display: block
+          position: absolute
+          top: -2px
+          right: -2px
+          bottom: -2px
+          left: -2px
+          border: 1px solid $gold
+          border-radius: 50%
+
+      .slick-active button
+        background: $gold

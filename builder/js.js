@@ -52,11 +52,15 @@ module.exports = function ( entries, globals ) {
   }
 
   return new Promise(( resolve, reject ) => {
-    webpack(webpackConfig, ( err, stats ) => {
-      if (err) return reject(err);
-      var jsonStats = stats.toJson();
-      if (stats.hasErrors()) return reject(jsonStats.errors);
-      resolve(jsonStats);
-    });
+    try {
+      webpack(webpackConfig, ( err, stats ) => {
+        if (err) return reject(err);
+        const jsonStats = stats.toJson();
+        if (stats.hasErrors()) return reject(jsonStats.errors);
+        resolve(jsonStats);
+      });
+    } catch (e) {
+      reject(e);
+    }
   })
 };

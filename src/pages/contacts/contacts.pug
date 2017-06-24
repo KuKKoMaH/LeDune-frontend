@@ -1,0 +1,27 @@
+extends ../../modules/layout/layout
+
+block body
+  .contacts-wrapper
+    .w
+      .c.c6
+        .contacts-title Контакты
+        .contacts-option.contacts-place
+          .contacts-param Резиденция:
+          .contacts-value Ул. Радищева, д.33 Ул. Радищева, д.33 Ул. Радищева, д.33 Ул. Радищева, д.33
+        .contacts-option.contacts-phone
+          .contacts-param Отдел продаж:
+          .contacts-value 8(812)335-00-00
+        .contacts-option.contacts-email
+          .contacts-param e-mail:
+          .contacts-value info@duneprestige.ru
+        .contacts-option.contacts-work
+          .contacts-param Время работы:
+          .contacts-value пн-сб 9:00-21-00
+      .c.c6
+        #map(data-lat='59.939726' data-lng='30.363847' data-zoom='16' data-original='http://placehold.it/555x400?text=' data-marker='pages/contacts/marker.png')
+        .contacts-pictures
+          img.contacts-pic(src='https://source.unsplash.com/random/270x180?1' width=270 height=180)
+          |&nbsp;
+          img.contacts-pic(src='https://source.unsplash.com/random/270x180?2' width=270 height=180)
+
+  include ../../modules/news_slider/news_slider

@@ -11,9 +11,13 @@ html
     :styles
 
   body
+    include ../../modules/header/header
+    include ../../modules/categories/categories
+    include ../../modules/buttons/buttons
     block body
     //include ../photoswipe/photoswipe
+    include ../../modules/footer/footer
 
 
-    :scripts
+  :scripts
     :hotreload

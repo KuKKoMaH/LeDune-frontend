@@ -1,0 +1,50 @@
+.button
+  vc()
+  color: white
+  font-size: 16px
+  line-height: 1
+  border: 0
+  padding: 0 35px
+  height: 45px
+  text-align: center
+  //line-height: 45px
+  border-radius: 23px
+  background-color $blue
+  position: relative
+  cursor: pointer
+  text-decoration: none
+  anim()
+
+  &:after
+    content: ''
+    display: block
+    position: absolute
+    top: -7px
+    right: -7px
+    bottom: -7px
+    left: -7px
+    border solid 1px $gold
+    border-radius: 27px
+    anim()
+
+  //&:after
+  //  content: ''
+  //  height: 100%
+  //  vc()
+
+  &:hover
+    box-shadow 0 2px 14px 0 rgba($blue, .6)
+
+    &:after
+      top: -6px
+      right: -6px
+      bottom: -6px
+      left: -6px
+      border-radius: 28px
+
+  &:active
+    color: #D59E9C
+    box-shadow none
+    &:after
+      background: #B52121
+      opacity: 0

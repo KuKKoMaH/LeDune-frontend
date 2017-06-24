@@ -1,0 +1,74 @@
+@import "slick-carousel/slick/slick.css"
+
+.name
+  ffA()
+  color: $blue
+  font-size: 2em
+  line-height: 1.2
+  margin-bottom: .5em
+  display: block
+
+.option
+  font-size: 1.1em
+  margin-bottom: .5em
+  line-height: 33px
+  padding-left: 50px
+  position: relative
+
+  &:before
+    content: ''
+    position: absolute
+    left: 0
+    top: 50%
+    transform: translateY(-50%)
+
+.phone:before
+  background: url(../catalog/sprite-phone.svg)
+.place:before
+  background: url(../catalog/sprite-place.svg)
+.price:before
+  background: url(../catalog/sprite-price.svg)
+.space:before
+  background: url(../catalog/sprite-space.svg)
+
+.more
+  display: inline-block
+  color: $gold
+
+.thumbs
+  display: block
+
+.thumb
+
+.slider
+  display: block
+
+  :global
+    .slick-dots
+      position: absolute
+      bottom: 20px
+      margin: 0
+      padding: 0
+      left: 0
+      width: 100%
+      text-align: center
+
+      li
+        display: inline-block
+        vertical-align: middle
+        margin: 0 9px
+
+      button
+        display: block
+        border: 0
+        background: $white
+        width: 15px
+        height: 15px
+        text-indent: -9999999px
+        border-radius: 50%
+        opacity: .5
+        anim()
+
+      .slick-active button
+        opacity: 1
+

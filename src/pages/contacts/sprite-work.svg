@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="30px" viewBox="0 0 20 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>sprite-work</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="sprite-work" fill-rule="nonzero" fill="#DAB985">
+            <path d="M3.03090886e-13,-3.37253722e-16 L3.03090886e-13,22.2922515 L7.17512835,22.2922515 L7.17512835,30 L20,22.185303 L20,2.6047748 L20,-9.99200722e-16 L3.03090886e-13,-9.99200722e-16 L3.03090886e-13,-3.37253722e-16 Z M17.3416999,20.7372121 L9.83342841,25.3128959 L9.83342841,9.26316051 L17.3413196,4.68747671 L17.3413196,20.7372121 L17.3416999,20.7372121 Z M7.17512835,7.81469704 L7.17512835,19.6874767 L2.65830006,19.6874767 L2.65830006,2.6047748 L15.7250428,2.6047748 L7.17512835,7.81469704 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

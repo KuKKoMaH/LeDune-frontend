@@ -1,0 +1,83 @@
+.wrapper
+  border-top: 1px solid rgba(#979797, .2)
+  padding: 4em 0
+  cf()
+  text-align: center
+
+  @media (max-width: $breakpoint-sm - 1)
+    padding-left: $gutter-half
+    padding-right: $gutter-half
+
+.prev,
+.next
+  text-align: left
+  text-decoration: none
+  &:hover
+    .arrow
+      text-decoration: none
+
+.prev
+  float: left
+
+  .arrow:before
+    background: url(sprite-arrow-left.svg)
+
+.next
+  float: right
+
+  .arrow:before
+    background: url(sprite-arrow-right.svg)
+
+.arrow
+  display: inline-block
+  vertical-align: middle
+  color: $gold
+  text-decoration: underline
+
+  &:before
+    content: ''
+    display: block
+    margin: 0 auto 1.5em
+
+.post
+  display: inline-block
+  vertical-align: middle
+  max-width: 262px
+  margin: 0 1.5em
+
+  @media (max-width: $breakpoint-md - 1)
+    max-width: 200px
+
+  @media (max-width: $breakpoint-sm - 1)
+    display: none
+
+.name
+  margin-top: 1em
+
+.list
+  display: inline-block
+  border: 1px solid rgba($gold, .2)
+  height: 189px
+  max-width: 262px
+  width: 100%
+  color: $gold
+  text-decoration: none
+  padding: 0 3em
+
+  @media (max-width: $breakpoint-lg - 1)
+    max-width: none
+    height: auto
+    margin-top: 1em
+
+  &:hover
+    text-decoration: underline
+
+  &:before
+    content: ''
+    display: inline-block
+    vertical-align: middle
+    height: 100%
+
+  span
+    display: inline-block
+    vertical-align: middle

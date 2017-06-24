@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>sprite-space</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="sprite-space" fill-rule="nonzero" fill="#DAB985">
+            <g id="Group">
+                <polygon id="Shape" points="19.08 15.72 22.8 19.44 19.44 22.8 15.6 19.08 13.2 24 10.8 10.8 24 13.2"></polygon>
+                <polygon id="Shape" points="21.6 2.4 15.6 2.4 15.6 0 24 0 24 8.4 21.6 8.4"></polygon>
+                <rect id="Rectangle-path" x="10.8" y="0" width="2.4" height="2.4"></rect>
+                <polygon id="Shape" points="2.4 8.4 0 8.4 0 0 8.4 0 8.4 2.4 2.4 2.4"></polygon>
+                <polygon id="Shape" points="2.4 21.6 8.4 21.6 8.4 24 0 24 0 15.6 2.4 15.6"></polygon>
+                <rect id="Rectangle-path" x="0" y="10.8" width="2.4" height="2.4"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

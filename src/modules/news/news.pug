@@ -1,0 +1,19 @@
+.news-wrapper
+  .w
+    .c.c9
+      .news-title Новости
+      for i in [1,2,3,4,5,6]
+        .news-item: .wf
+          .c.c4
+            .news-image: img(src='https://source.unsplash.com/random/262x178?' + i width=262 height=178)
+          .c.c8
+            .news-date 22 марта 2017 года
+            .news-name Квартира на Саперном продается за 5 млн. руб.
+            .news-desc Если квартира имеет террасу в 160 квадратных метров, это уже не просто квартира. Элитный пентхаус стоимостью 113 миллионов рублей продается на Крестовском острове.
+            a.news-more(href='#') Читать далее >
+    .c.c3
+      .news-best-title Лучшие предложения
+      for i in [1,2,3]
+        a.news-best-item(href='#')
+          img(src='https://source.unsplash.com/random/262x178?' + i width=262 height=178)
+          .news-best-name Трехкомнатная квартира на Московском Проспекте
