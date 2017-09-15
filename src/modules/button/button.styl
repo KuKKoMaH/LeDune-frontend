@@ -6,6 +6,7 @@
   border: 0
   padding: 0 35px
   height: 45px
+  letter-spacing: 1px
   text-align: center
   //line-height: 45px
   border-radius: 23px
@@ -13,6 +14,7 @@
   position: relative
   cursor: pointer
   text-decoration: none
+  outline: 0
   anim()
 
   &:after
@@ -42,9 +44,26 @@
       left: -6px
       border-radius: 28px
 
-  &:active
-    color: #D59E9C
-    box-shadow none
-    &:after
-      background: #B52121
-      opacity: 0
+  //&:active
+  //  color: #D59E9C
+  //  box-shadow none
+  //  &:after
+  //    background: #B52121
+  //    opacity: 0
+
+.white
+  background: #E3E3E3
+  color: #9B9B9B
+
+  &:hover
+    box-shadow 0 2px 14px 0 rgba(#E3E3E3, .6)
+
+.clean
+  background: #fff
+  color: #645B4E
+
+  &:hover
+    box-shadow: none
+
+  &:after
+    border-color: #ffffff

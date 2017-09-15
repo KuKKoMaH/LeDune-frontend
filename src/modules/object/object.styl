@@ -31,9 +31,23 @@
 .space:before
   background: url(../catalog/sprite-space.svg)
 
-.more
+.more_button
   display: inline-block
   color: $gold
+  cursor: pointer
+  text-decoration: underline
+
+  &:hover
+    text-decoration: none
+
+.more
+  max-height: 0
+  overflow: hidden
+  opacity: 0
+  anim()
+
+  &_active
+    max-height: 1000px
 
 .thumbs
   display: block

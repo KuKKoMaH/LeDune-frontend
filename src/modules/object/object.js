@@ -7,10 +7,11 @@ $('.' + object_slider).slick({
 });
 
 $('.' + object_thumbs).slick({
-  arrows:       false,
-  slidesToShow: 7,
-  asNavFor:     '.' + object_slider,
-  responsive:   [
+  arrows:        false,
+  slidesToShow:  7,
+  asNavFor:      '.' + object_slider,
+  focusOnSelect: true,
+  responsive:    [
     {
       breakpoint: 1200 - 1,
       settings:   {
@@ -30,4 +31,8 @@ $('.' + object_thumbs).slick({
       }
     },
   ],
+});
+
+$('.' + object_more_button).on('click', () => {
+  $('.' + object_more).toggle(object_more_active);
 });

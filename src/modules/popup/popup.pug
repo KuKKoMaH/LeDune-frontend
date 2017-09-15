@@ -1,0 +1,10 @@
+include ../button/button
+
+.popup-wrapper
+  .popup-block#callback
+    .popup-title Оставьте заявку на подбор
+    .popup-text Оставьте номер телефона, мы перезвоним и детально проконсультируем
+    form
+      .popup-input-wrapper: input.popup-input
+      +button()(class='buttons-button button-clean' ) Отправить
+      //input.popup-submit(type='submit' value='Отправить')

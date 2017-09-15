@@ -3,17 +3,18 @@ include ../button/button
 .catalog-wrapper
   .w
     .c.c12: h1.catalog-title Элитная недвижимость
-    for i in [1,2,3]
-      .c.c12: .catalog-item: .wf
-        .c.c6
-          a(href='#'): img.catalog-image(src='https://source.unsplash.com/random/525x341?' + i width=525 height=341)
-        .c.c6
-          a.catalog-name(href='#') Трехкомнатная квартира в ЖК "Легенда"
-          .catalog-option.catalog-price 5 600 000 руб.
-          .catalog-option.catalog-space 89 м2
-          .catalog-option.catalog-place Санкт-Петербург, ул. Яхтенная
-          .catalog-option.catalog-phone 8(812)999-00-00
-          a.catalog-more(href='#') подробнее
+    .catalog-items
+      for i in [1,2,3]
+        .c.c12: .catalog-item: .wf
+          .c.c6
+            a(href='#'): img.catalog-image(src='https://source.unsplash.com/random/525x341?' + i width=525 height=341)
+          .c.c6
+            a.catalog-name(href='#') Трехкомнатная квартира в ЖК "Легенда"
+            .catalog-option.catalog-price 5 600 000 руб.
+            .catalog-option.catalog-space 89 м2
+            .catalog-option.catalog-place Санкт-Петербург, ул. Яхтенная
+            .catalog-option.catalog-phone 8(812)999-00-00
+            a.catalog-more(href='#') подробнее
     .c.c12: .catalog-show: +button(class='catalog-button') Показать еще
     .c.c12
       .catalog-bullshit

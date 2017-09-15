@@ -51,11 +51,11 @@ function convert( filePath ) {
         url({ url: "rebase" })
       ];
       stylus(css)
-        .import(path.resolve(config.basePath, 'styles', 'index.styl'))
-        .render(function ( err, css ) {
-          if (err) return reject(err);
-          // console.log(css);
-          postcss(plugins).process(css, { from: filePath, to: path.resolve(config.basePath, 'style.css') })
+          .import(path.resolve(config.basePath, 'styles', 'index.styl'))
+          .render(function ( err, css ) {
+            if (err) return reject(err);
+            // console.log(css);
+            postcss(plugins).process(css, { from: filePath, to: path.resolve(config.basePath, 'style.css') })
             .then(result => {
               // console.log(result.css);
               resolve({ module, css: result.css, name: fileInfo.name });
